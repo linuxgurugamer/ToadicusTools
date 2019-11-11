@@ -25,6 +25,7 @@
 
 using KSP;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using ToadicusTools;
 using UnityEngine;
@@ -142,7 +143,10 @@ namespace ToadicusTools.TweakableTools
 			bool clobberEverywhere = false
 		)
 		{
-			InitializeTweakable<T>(
+
+            Debug.Log("Initializetweakable, <T>: " + typeof(T) + ", localField: " + localField + ", remoteField: " + remoteField + ", centerValue: " + centerValue);
+
+            InitializeTweakable<T>(
 				floatRange,
 				ref localField,
 				ref remoteField,
