@@ -141,7 +141,7 @@ namespace ToadicusTools
 			if (HighLogic.LoadedScene > GameScenes.SPACECENTER)
 			{
 
-				debugmsg.message = Msg;
+				debugmsg.message = Msg.Substring(0, (int)Math.Min(80, Msg.Length));
 				ScreenMessages.PostScreenMessage(debugmsg);
 			}
 

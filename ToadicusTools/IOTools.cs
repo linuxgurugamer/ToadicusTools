@@ -30,14 +30,31 @@ using System.IO;
 using System.Text;
 using ToadicusTools.Text;
 using UnityEngine;
+using System.Reflection;
 
 namespace ToadicusTools
 {
 	public static class IOTools
 	{
-		public static readonly string KSPRootPath = KSPUtil.ApplicationRootPath.Replace("\\", "/");
-		public static readonly string GameDataPath = string.Format("{0}GameData/", KSPRootPath);
+		//public static readonly string KSPRootPath = KSPUtil.ApplicationRootPath.Replace("\\", "/");
+		//public static readonly string GameDataPath = string.Format("{0}GameData/", GetRootPath);
 
+		public static string KSPRootPath
+		{
+			get
+			{
+				return Assembly.GetExecutingAssembly().Location;
+			}
+		}
+		public static string GameDataPath
+		{ 
+			get
+			{
+				var rootPath = Assembly.GetExecutingAssembly().Location;
+				var gameDataIndex = rootPath.IndexOf("GameData", StringComparison.CurrentCultureIgnoreCase);
+				return Path.Combine(rootPath.Remove(gameDataIndex, rootPath.Length - gameDataIndex), "GameData");
+			}
+		}
 		public static bool LoadTexture(
 			out Texture2D texture,
 			string path,

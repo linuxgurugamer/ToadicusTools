@@ -1,5 +1,8 @@
 ChangeLog
 
+0.22.4.1
+	Replaced two lines which referenced the KSPUtil.ApplicationRootPath with new properties
+
 0.22.4
 	Added InstallChecker
 	Updated AssemblyVersion
