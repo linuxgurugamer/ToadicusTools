@@ -101,7 +101,7 @@ namespace ToadicusTools.Extensions
 		public static void LogDebug(this Component component, string format, params object[] args)
 		{
 			string message = string.Format(Text.SIFormatProvider.SIFormatter, format, args);
-            Debug.Log(message);
+			Logging.PostLogMessage(message);
 			component.Log(message);
 		}
 

@@ -84,6 +84,7 @@
     </Compile>
     <Compile Include="InstallChecker.cs" />
     <Compile Include="IntCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TweakableTools.cs" />
     <Compile Include="Wrapper\ToolbarWrapper.cs" />
     <Compile Include="VectorTools.cs" />

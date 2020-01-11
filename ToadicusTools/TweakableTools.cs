@@ -144,7 +144,7 @@ namespace ToadicusTools.TweakableTools
 		)
 		{
 
-            Debug.Log("Initializetweakable, <T>: " + typeof(T) + ", localField: " + localField + ", remoteField: " + remoteField + ", centerValue: " + centerValue);
+			Logging.PostLogMessage("Initializetweakable, <T>: " + typeof(T) + ", localField: " + localField + ", remoteField: " + remoteField + ", centerValue: " + centerValue);
 
             InitializeTweakable<T>(
 				floatRange,

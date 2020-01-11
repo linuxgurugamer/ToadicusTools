@@ -65,14 +65,14 @@ namespace ToadicusTools.Extensions
 				return false;
 			}
 
-			#if DEBUG
-			Debug.Log("[hasModuleByType]: Falling back to linear search.");
+#if DEBUG
+			Logging.PostLogMessage("[hasModuleByType]: Falling back to linear search.");
 			#endif
 
 			if (part.Modules != null)
 			{
-				#if DEBUG
-				Debug.Log("[hasModuleByType]: Part.modules is defined; checking PartModule subtypes.");
+#if DEBUG
+				Logging.PostLogMessage("[hasModuleByType]: Part.modules is defined; checking PartModule subtypes.");
 				#endif
 
 				PartModule module;
@@ -87,8 +87,8 @@ namespace ToadicusTools.Extensions
 			}
 			else
 			{
-				#if DEBUG
-				Debug.Log("[hasModuleByType]: Part.modules is not defined; trying ModuleInfo search.");
+#if DEBUG
+				Logging.PostLogMessage("[hasModuleByType]: Part.modules is not defined; trying ModuleInfo search.");
 				#endif
 
 				AvailablePart.ModuleInfo moduleInfo;

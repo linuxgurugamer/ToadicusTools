@@ -189,7 +189,7 @@ namespace ToadicusTools.DebugTools
 					}
 				}
 
-				Debug.Log(sb.ToString());
+				Logging.PostLogMessage(sb.ToString());
 			}
 		}
 	}

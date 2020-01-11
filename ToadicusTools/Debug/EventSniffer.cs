@@ -105,7 +105,7 @@ namespace ToadicusTools.DebugTools
 			{
 				sb.AppendFormat("construct: {0}", construct.shipName);
 
-				Debug.Log(sb.ToString());
+				Logging.PostLogMessage(sb.ToString());
 			}
 		}
 
@@ -116,7 +116,7 @@ namespace ToadicusTools.DebugTools
 				sb.AppendFormat("ConstructionEventType={0}, Part={1}",
 					Enum.GetName(typeof(ConstructionEventType), type), part);
 
-				Debug.Log(sb.ToString());
+				Logging.PostLogMessage(sb.ToString());
 			}
 		}
 
@@ -163,7 +163,7 @@ namespace ToadicusTools.DebugTools
 
 				sb.AppendFormat("\n\ttoStatus: {0}", Enum.GetName(typeof(ProtoCrewMember.RosterStatus), toStatus));
 
-				Debug.Log(sb.ToString());
+				Logging.PostLogMessage(sb.ToString());
 			}
 		}
 
@@ -269,7 +269,7 @@ namespace ToadicusTools.DebugTools
 		{
 			this.appendVessel(sb, data);
 
-			Debug.Log(sb.ToString());
+			Logging.PostLogMessage(sb.ToString());
 		}
 
 		internal void EventReportHelper(PooledStringBuilder sb, EventReport data)
@@ -286,14 +286,14 @@ namespace ToadicusTools.DebugTools
 				data.sender
 			);
 
-			Debug.Log(sb.ToString());
+			Logging.PostLogMessage(sb.ToString());
 		}
 
 		internal void PartEventHelper(PooledStringBuilder sb, Part part)
 		{
 			this.appendPartAncestry(sb, part);
 
-			Debug.Log(sb.ToString());
+			Logging.PostLogMessage(sb.ToString());
 		}
 
 		internal void FromPartToPartHelper(PooledStringBuilder sb, GameEvents.FromToAction<Part, Part> data)
@@ -306,7 +306,7 @@ namespace ToadicusTools.DebugTools
 
 			this.appendPartAncestry(sb, data.to);
 
-			Debug.Log(sb.ToString());
+			Logging.PostLogMessage(sb.ToString());
 		}
 
 		internal void FromModuleToModuleHelper(PooledStringBuilder sb, GameEvents.FromToAction<PartModule, PartModule> data)
@@ -319,7 +319,7 @@ namespace ToadicusTools.DebugTools
 
 			this.appendModuleAncestry(sb, data.to);
 
-			Debug.Log(sb.ToString());
+			Logging.PostLogMessage(sb.ToString());
 		}
 
 		internal void HostedFromPartToPartHelper(PooledStringBuilder sb, GameEvents.HostedFromToAction<Part, Part> data)
@@ -376,7 +376,7 @@ namespace ToadicusTools.DebugTools
 				sb.Append("null");
 			}
 
-			Debug.Log(sb.ToString());
+			Logging.PostLogMessage(sb.ToString());
 		}
 
 		internal PooledStringBuilder appendModuleAncestry(PooledStringBuilder sb, PartModule module, uint tabs = 1)
